@@ -1,5 +1,5 @@
-const { User, Thought } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -95,10 +95,10 @@ const resolvers = {
           { $addToSet: { friends: friendId } },
           { new: true }
         ).populate('friends');
-    
+
         return updatedUser;
       }
-    
+
       throw new AuthenticationError('You need to be logged in!');
     }
   }
