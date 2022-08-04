@@ -34,7 +34,8 @@ export const QUERY_THOUGHT = gql`
       }
     }
   }
-`
+`;
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
